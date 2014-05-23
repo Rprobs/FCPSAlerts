@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FCPS Alerts</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="status">Status</string>
+    <string name="schedule">Schedule</string>
+    <string name="settings">Settings</string>
+    <string name="action_settings">Settings</string>
+    <string name="loading">Loading...</string>
+    <string name="button_text">Refresh</string>
+    <string name="notifications">Notifications:</string>
+    <string name="refresh">Refresh Rate (Minutes):</string>
+    <string name="sch_des">2-Hour Delay Schedule</string>
+
+</resources>

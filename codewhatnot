@@ -1,0 +1,40 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+public class Main {
+	
+	public static void main(String[] args) throws MalformedURLException {
+		 
+		URL url;
+	    InputStream is = null;
+	    BufferedReader br;
+	    String line = "";
+	    String html = "";
+
+	    try {
+	        url = new URL("http://www.fcps.edu/news/emerg.shtml");
+	        is = url.openStream();
+	        br = new BufferedReader(new InputStreamReader(is));
+
+	        while ((line = br.readLine()) != null) {
+	            html = html + line;
+	        }
+	    } catch (MalformedURLException mue) {
+	         mue.printStackTrace();
+	    } catch (IOException ioe) {
+	         ioe.printStackTrace();
+	    } finally {
+	        try {
+	            if (is != null) is.close();
+	        } catch (IOException ioe) {
+	        }
+	    }
+		String status = html.substring(html.indexOf("<p><strong>") + 11, html.indexOf("</strong></p>") - 1);
+		System.out.println(status);
+ 
+	}
+}

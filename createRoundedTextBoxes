@@ -1,0 +1,37 @@
+HOW TO CREATE ROUNDED TEXT BOXES---
+
+Try this...
+
+Create an XML file in your drawables directory called "rounded_edges.xml" and paste this into it:
+
+Code:
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+	<solid android:color="#FFFFFF"/>
+	<corners android:radius="5px"/>
+	<padding android:left="0dp" android:top="0dp" android:right="0dp" android:bottom="0dp" /> 
+</shape>
+
+Inside the layout you're using for your Activity, use this:
+
+Code:
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@drawable/rounded_edges"
+			>
+			<TextView 
+				android:id="@+id/mytext"
+				android:layout_width="200dip"
+				android:layout_height="wrap_content"
+				android:text="blah blah blah blah"
+				android:padding="6dip"
+				android:textColor="#000000" />
+		</LinearLayout>
+		
+You may need to do some tweaking. Hell, you may even be able to discard the LinearLayout and 
+set the android:background of the TextView to @drawable/rounded_edges.
+
+
+Advise from this thread: http://androidforums.com/application-development/194627-creating-text-boxes-rounded-edges.html
